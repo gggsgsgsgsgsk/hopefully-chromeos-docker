@@ -1,0 +1,15 @@
+{
+    "name": "KasmVNC Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "forwardPorts": [6901, 5901],
+    "runArgs": ["--cap-add=SYS_ADMIN", "--security-opt=seccomp=unconfined"],
+    "extensions": [
+        "ms-vscode.remote-containers"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postStartCommand": "pulseaudio --start"
+}
